@@ -1,0 +1,25 @@
+import { Client } from "@notionhq/client";
+import { GastoExtraido } from "../types";
+
+export class NotionService {
+  private client: Client;
+  private databaseId: string;
+
+  constructor(token: string, databaseId: string) {
+    this.client = new Client({ auth: token });
+    this.databaseId = databaseId;
+  }
+
+  async guardarGasto(gasto: GastoExtraido, usuario: string) {
+    return await this.client.pages.create({
+      parent: { database_id: this.databaseId },
+      properties: {
+        "Concepto": { title: [{ text: { content: gasto.concepto } }] },
+        "Comercio": { rich_text: [{ text: { content: gasto.comercio } }] },
+        "Monto": { number: gasto.monto },
+        "Categoria": { select: { name: gasto.categoria } },
+        "Usuario": { select: { name: usuario } }
+      }
+    });
+  }
+}

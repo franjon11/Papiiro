@@ -1,0 +1,25 @@
+# Dependencias
+node_modules/
+
+# Variables de entorno
+.env
+.env.local
+.env.production
+
+# Compilación de TypeScript
+dist/
+*.tsbuildinfo
+
+# Vercel
+.vercel/
+
+# Logs y Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# Archivos de Sistema
+.DS_Store
+Thumbs.db
