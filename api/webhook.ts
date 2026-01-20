@@ -62,6 +62,6 @@ export default async function handler(req: any, res: any) {
     if (chatId) {
       await telegram.enviarMensaje(chatId, `❌ Ocurrió un error: pruebe en unos instantes o contactese con los administradores`);
     }
-    return res.status(500).send('Error procesado');
+    return res.status(200).send('Error procesado');
   }
 }
