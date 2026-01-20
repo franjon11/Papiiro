@@ -18,6 +18,7 @@ export class NotionService {
         "Comercio": { rich_text: [{ text: { content: gasto.comercio } }] },
         "Monto": { number: gasto.monto },
         "Categoria": { select: { name: gasto.categoria } },
+        "Fecha": {date: { start: gasto.fecha, time_zone: null }},
         "Usuario": { select: { name: usuario } }
       }
     });
