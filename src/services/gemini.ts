@@ -20,7 +20,7 @@ export class GeminiService {
         "comercio": "Nombre del lugar",
         "monto": 1234.56,
         "categoria": "Comida/Transporte/Hogar/Viajes/Ocio/Varios",
-        "fecha": "DD-MM-YYYY"
+        "fecha": "YYYY-MM-DD"
       }
       Si no ves la fecha, usa la de hoy. Si no ves el comercio, pon 'Desconocido'.
     `;
