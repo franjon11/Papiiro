@@ -42,7 +42,7 @@ async function run() {
             - fecha: ${gasto.fecha}
           ***
         `)
-        await db.guardarGasto(gasto, user);
+        await db.guardarGasto(gasto, user, imgUrl);
 
         console.log(`🔍 Gasto registrado: 
           ***

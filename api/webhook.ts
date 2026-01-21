@@ -41,7 +41,7 @@ export default async function handler(req: any, res: any) {
           ***
         `)
 
-      await db.guardarGasto(gasto, user);
+      await db.guardarGasto(gasto, user, imgUrl);
 
       console.log(`✅ Gasto registrado: 
           ***
