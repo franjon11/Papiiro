@@ -38,7 +38,7 @@ async function run() {
             - concepto: ${gasto.concepto}
             - comercio: ${gasto.comercio}
             - monto: ${gasto.monto}
-            - categoria: ${gasto.categoria}
+            - categoria: ${gasto.categoria.map(c => c.name).join(" | ")}
             - fecha: ${gasto.fecha}
           ***
         `)
@@ -50,11 +50,11 @@ async function run() {
             - usuario: ${user}
             - comercio: ${gasto.comercio}
             - monto: ${gasto.monto}
-            - categoria: ${gasto.categoria}
+            - categoria: ${gasto.categoria.map(c => c.name).join(" | ")}
             - fecha: ${gasto.fecha}
           ***
         `)
-        await telegram.enviarMensaje(chatId, `✅ Guardado: *${gasto.comercio}* por *$${gasto.monto}*`);
+        await telegram.enviarMensaje(chatId, `✅ Registrado: *${gasto.comercio}* por *$${gasto.monto}*`);
       }
     } catch (err) {
       console.log("❌ Ocurrió un error: ", err);

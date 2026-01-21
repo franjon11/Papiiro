@@ -36,7 +36,7 @@ export default async function handler(req: any, res: any) {
             - concepto: ${gasto.concepto}
             - comercio: ${gasto.comercio}
             - monto: ${gasto.monto}
-            - categoria: ${gasto.categoria}
+            - categoria: ${gasto.categoria.map(c => c.name).join(" | ")}
             - fecha: ${gasto.fecha}
           ***
         `)
@@ -49,7 +49,7 @@ export default async function handler(req: any, res: any) {
             - usuario: ${user}
             - comercio: ${gasto.comercio}
             - monto: ${gasto.monto}
-            - categoria: ${gasto.categoria}
+            - categoria: ${gasto.categoria.map(c => c.name).join(" | ")}
             - fecha: ${gasto.fecha}
           ***
         `)

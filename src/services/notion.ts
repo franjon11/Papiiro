@@ -17,8 +17,8 @@ export class NotionService {
         "Concepto": { title: [{ text: { content: gasto.concepto } }] },
         "Comercio": { rich_text: [{ text: { content: gasto.comercio } }] },
         "Monto": { number: gasto.monto },
-        "Categoria": { select: { name: gasto.categoria } },
-        "Fecha": {date: { start: gasto.fecha }},
+        "Categoria": { multi_select: gasto.categoria },
+        "Fecha": { date: { start: gasto.fecha }},
         "Usuario": { select: { name: usuario } }
       }
     });
