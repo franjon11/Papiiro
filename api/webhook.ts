@@ -32,7 +32,7 @@ export default async function handler(req: any, res: any) {
 
     const typeAnalysis = getTypeOfAnalysis(update.message)
 
-    handlerShowInfo({ type: "analyzing", chatId })
+    await handlerShowInfo({ type: "analyzing", chatId })
     
     // ANALISIS Y EXTRACCION
     let gasto: GastoExtraido | null = null;
@@ -47,12 +47,12 @@ export default async function handler(req: any, res: any) {
       return res.status(200).send(`Error al analizar el mensaje de tipo: ${typeAnalysis}`);
     }
     gasto.user = user
-    handlerShowInfo({ type: "analyzed", gasto })
+    await handlerShowInfo({ type: "analyzed", gasto })
 
     // GUARDADO EN NOTION
     await db.guardarGasto(gasto);
 
-    handlerShowSuccess({ type: "success", chatId, gasto })
+    await handlerShowSuccess({ type: "success", chatId, gasto })
 
     return res.status(200).send('OK');
   } catch (error) {

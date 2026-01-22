@@ -1,7 +1,7 @@
 import { useMsgAlerts } from "../messages/useMsgAlerts";
 import { useMsgLogger } from "../messages/useMsgLogger";
 import { TelegramService } from "../services/telegram";
-import { AlertErrorType, AlertInfoType, AlertSuccessType, AlertType, AnalysisType, GastoExtraido } from "../types";
+import { AlertErrorType, AlertInfoType, AlertSuccessType, AlertType, GastoExtraido } from "../types";
 
 interface UseHandlerLoggerProps {
   telegram: TelegramService;
@@ -11,7 +11,6 @@ interface HandlerShowInfoProps {
   type: AlertInfoType
   chatId?: number
   gasto?: GastoExtraido
-  typeAnalysis?: AnalysisType
 }
 
 interface HandlerShowSuccessProps {

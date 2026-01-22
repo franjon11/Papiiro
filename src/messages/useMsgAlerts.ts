@@ -1,5 +1,5 @@
 import { TelegramService } from "../services/telegram";
-import { AlertType, AnalysisType, GastoExtraido } from "../types";
+import { AlertType, GastoExtraido } from "../types";
 
 const TemplateMsg: Record<AlertType, string> = {
   started: '🤖 Bot de Gastos Activo',
