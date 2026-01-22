@@ -10,7 +10,7 @@ export class NotionService {
     this.databaseId = databaseId;
   }
 
-  async guardarGasto(gasto: GastoExtraido, usuario: string, imgUrl: string) {
+  async guardarGasto(gasto: GastoExtraido) {
     return await this.client.pages.create({
       parent: { database_id: this.databaseId },
       properties: {
@@ -19,17 +19,9 @@ export class NotionService {
         "Monto": { number: gasto.monto },
         "Categoria": { multi_select: gasto.categoria },
         "Fecha": { date: { start: gasto.fecha }},
-        "Usuario": { select: { name: usuario } },
+        "Usuario": { select: { name: gasto.user } },
         "Comprobante": {
-          files: [
-            {
-              name: "Ticket",
-              type: "external",
-              external: {
-                url: imgUrl
-              }
-            }
-          ]
+          files: gasto.comprobante ? [{ name: "Ticket", type: "external", external: { url: gasto.comprobante } }] : []
         }
       }
     });
