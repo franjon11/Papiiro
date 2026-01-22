@@ -15,7 +15,7 @@ Este es un bot inteligente de Telegram diseñado para automatizar el registro de
 1.  **Telegram Bot:** Crea uno con [@BotFather](https://t.me/botfather) y te da tu `TOKEN`.
 2.  **Google AI Studio:** Crear una API Key para los modelos Gemini en [aistudio.google.com](https://aistudio.google.com/).
 3.  **Notion Integración:** * Crea una integración en [notion.so/my-integrations](https://www.notion.so/my-integrations).
-    * Crea una base de datos con las columnas: `Nombre` (Title), `Monto` (Number), `Categoria` (MultiSelect), `Usuario` (Select), `Fecha` (Date) y `Comprobante` (Files).
+    * Crea una base de datos con las columnas: `Concepto` (Title), `Comercio` (RichText), `Monto` (Number), `Categoria` (MultiSelect), `Usuario` (Select), `Fecha` (Date) y `Comprobante` (Files&Media).
     * Conecta la integración a tu base de datos (Add Connection).
 
 ## ⚙️ Configuración del Entorno
