@@ -18,18 +18,6 @@ Este es un bot inteligente de Telegram diseñado para automatizar el registro de
     * Crea una base de datos con las columnas: `Concepto` (Title), `Comercio` (RichText), `Monto` (Number), `Categoria` (MultiSelect), `Usuario` (Select), `Fecha` (Date) y `Comprobante` (Files&Media).
     * Conecta la integración a tu base de datos (Add Connection).
 
-## 🔩 Configuración del Bot de Telegram
-Ahora hay que decirle a los servidores de Telegram: "Cada vez que alguien le escriba a mi bot, manda la información a esta URL".
-En Chrome pegar la siguiente url, reemplazando con los campos correspondientes:
-
-```
-https://api.telegram.org/bot<TU_TOKEN_DE_TELEGRAM>/setWebhook?url=<TU_URL_DE_NGROK>/webhook/telegram
-```
-   - Ejemplo real: ```https://api.telegram.org/bot654321:ABC.../setWebhook?url=https://a1b2-c3d4.ngrok-free.app/webhook/telegram```
-
-Si todo sale bien, vas a ver un JSON que dice: 
-``` {"ok":true,"result":true,"description":"Webhook was set"}```
-
 ## ⚙️ Configuración del Entorno
 
 Crea un archivo `.env` en la raiz con las siguientes variables de entorno:
@@ -39,3 +27,15 @@ GEMINI_API_KEY=tu_api_key_de_google
 NOTION_TOKEN=tu_token_de_notion
 NOTION_DATABASE_ID=tu_id_de_la_base_de_datos
 ```
+
+## 🔩 Configuración del Bot de Telegram
+Ahora hay que decirle a los servidores de Telegram: "Cada vez que alguien le escriba a mi bot, manda la información a esta URL".
+En Chrome pegar la siguiente url, reemplazando con los campos correspondientes:
+
+```
+https://api.telegram.org/bot<TU_TOKEN_DE_TELEGRAM>/setWebhook?urlhttps://tu-proyecto.vercel.app/api/webhook
+```
+   - Ejemplo real: ```https://api.telegram.org/bot654321:ABC.../setWebhook?url=https://mi-bot-gastos.vercel.app/api/webhook```
+
+Si todo sale bien, vas a ver un JSON que dice: 
+```{"ok":true,"result":true,"description":"Webhook was set"}```
